@@ -169,7 +169,7 @@ function parseWeather(data, place) {
   const fallbackName = place.displayName.split(",")[0].trim();
 
   return {
-    city: data.name || fallbackName,
+    city: fallbackName || data.name,
     country: (data.sys && data.sys.country) || "",
     temp: Math.round(data.main.temp),
     humidity: data.main.humidity,
