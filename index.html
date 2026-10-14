@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WeatherMap - search any place and see its current weather on an interactive map.">
+  <title>WeatherMap</title>
+
+  <!-- Custom professional font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Leaflet (Option B: Leaflet.js + OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">WeatherMap</h1>
+    <p class="app-subtitle">Type a city or place and see its weather right on the map.</p>
+  </header>
+
+  <main class="container">
+    <form id="search-form" class="search-form" novalidate>
+      <label for="location-input" class="visually-hidden">Location</label>
+      <input type="text" id="location-input" class="search-input" name="location"
+             placeholder="Search a location, e.g. Port Sudan" autocomplete="off" required>
+      <button type="submit" id="submit-btn" class="search-btn">Get Weather</button>
+    </form>
+
+    <div id="spinner" class="spinner-wrap hidden" role="status" aria-live="polite">
+      <div class="spinner"></div>
+      <span class="spinner-text">Fetching weather…</span>
+    </div>
+
+    <div id="alert-area" class="alert-area" aria-live="assertive"></div>
+
+    <section id="favorites" class="favorites hidden" aria-label="Favorite cities">
+      <h2 class="favorites-title">Favorite cities</h2>
+      <div id="favorites-list" class="favorites-list"></div>
+    </section>
+
+    <div id="map" class="map-container" role="region" aria-label="Weather map"></div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Weather data by OpenWeatherMap · Map data © OpenStreetMap contributors · Geocoding by Nominatim</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
