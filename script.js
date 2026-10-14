@@ -104,6 +104,7 @@ async function searchLocation(query) {
    Phase 2: Asynchronous geocoding (Nominatim)
    ========================================================================== */
 async function geocode(query) {
+      // Converts a city name into latitude and longitude using Nominatim //
   const params = new URLSearchParams({
     q: query,
     format: "json",
