@@ -12,7 +12,7 @@
   --danger-line: #d64545;
   --ok-bg: #e7f6ee;
   --ok-line: #2f9e66;
-  --radius: 12px;
+  --radius: 14px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
